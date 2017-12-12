@@ -1,0 +1,11 @@
+---
+alpine:
+  - '3.5'
+  - '3.6'
+  - '3.7'
+debian:
+  - jessie-slim
+  - stretch-slim
+ubuntu:
+  - '14.04'
+  - '16.04'

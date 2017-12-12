@@ -1,0 +1,5 @@
+#!/usr/bin/execlineb -P
+
+# set specific user and group
+s6-envuidgid nginx
+nginx -g "daemon off;"
