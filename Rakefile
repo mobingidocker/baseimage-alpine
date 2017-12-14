@@ -64,7 +64,7 @@ task :build, ['image_name', 'image_tag'] do |task, args|
   end
 
   Dir.chdir(File.expand_path('../', __FILE__)) do
-    cmd = "docker build -f #{dockerfile} -t #{image_str} --squash ."
+    cmd = "docker build -f #{dockerfile} -t #{image_str} --squash --no-cache ."
     puts cmd
     Open3.popen3(cmd) do |i, o, e, w|
       o.each { |line| puts line }
