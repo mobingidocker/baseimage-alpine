@@ -11,7 +11,7 @@ task :default do
   puts `rake -vT`
 end
 
-desc 'run all tasks'
+desc 'run export_all and build_all'
 task :all do
   Rake::Task['export_all'].invoke
   Rake::Task['build_all'].invoke

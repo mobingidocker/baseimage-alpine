@@ -1,4 +1,5 @@
 FROM <%= image_name %>:<%= image_tag %>
+LABEL com.mobingi.code_dir="/var/www/html"
 
 <%= partfile %>
 
