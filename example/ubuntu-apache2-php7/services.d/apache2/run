@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+source /etc/apache2/envvars
+/usr/sbin/apache2 -DFOREGROUND

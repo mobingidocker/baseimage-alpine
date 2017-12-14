@@ -1,5 +1,6 @@
 # this file is created by rake exprt task.
 FROM alpine:3.5
+LABEL com.mobingi.code_dir="/var/www/html"
 
 RUN apk add bash curl --no-cache
 

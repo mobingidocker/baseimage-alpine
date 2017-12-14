@@ -1,4 +1,5 @@
-FROM mobingidocker-alpine:3.7
+FROM mobingi/baseimage:alpine-3.7
+LABEL com.mobingi.code_dir="/var/lib/nginx/html"
 
 RUN apk add bash vim nginx redis --update
 RUN install -d /run/nginx -o nginx -g www-data

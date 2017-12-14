@@ -1,5 +1,6 @@
 # this file is created by rake exprt task.
 FROM ubuntu:14.04
+LABEL com.mobingi.code_dir="/var/www/html"
 
 RUN apt-get update && apt-get upgrade -y
 

@@ -1,5 +1,6 @@
 # this file is created by rake exprt task.
 FROM debian:stretch-slim
+LABEL com.mobingi.code_dir="/var/www/html"
 
 RUN apt-get update && apt-get upgrade -y
 
