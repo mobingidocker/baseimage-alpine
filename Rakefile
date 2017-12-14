@@ -112,4 +112,15 @@ namespace :push do
       end
     end
   end
+
+  desc 'generate description for dockerhub'
+  task :description do
+    targets.each_pair do |k, v|
+      v.each do |tag|
+        tag_str = [k, tag.to_s].join('-')
+        image_path = "https://github.com/mobingidocker/dockerimage-boilerplate/blob/master/dist/#{k}/#{tag}/Dockerfile"
+        puts %Q{- [#{tag_str}](#{image_path})}
+      end
+    end
+  end
 end
