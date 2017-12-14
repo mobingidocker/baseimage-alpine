@@ -1,4 +1,4 @@
-FROM mobingidocker:ubuntu-16.04
+FROM mobingi/baseimage:ubuntu-16.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		apache2 \
