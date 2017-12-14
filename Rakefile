@@ -31,6 +31,16 @@ desc 'build all docker images'
 task :build_all do
   targets.each_pair do |k, v|
     v.each do |tag|
+      cmd = "docker pull #{k}:#{tag}"
+      puts cmd
+      Open3.popen3(cmd) do |i, o, e, w|
+        o.each { |line| puts line }
+        e.each { |line| puts line }
+        exit_status = w.value
+        unless exit_status.success?
+          abort "FAILED to Pull !! #{k}:#{tag}"
+        end
+      end
       # invoke does not allow twice
       Rake::Task['build'].execute(image_name: k, image_tag: tag)
     end
