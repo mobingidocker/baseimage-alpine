@@ -2,8 +2,10 @@
 FROM ubuntu:14.04
 LABEL com.mobingi.code_dir="/var/www/html"
 
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y curl
+RUN apt-get update && apt-get upgrade -y \
+  && apt-get install -y curl \
+	&& apt-get clean \
+	&& rm -fr /var/lib/apt/lists/*
 
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.2.1/s6-overlay-amd64.tar.gz /tmp/

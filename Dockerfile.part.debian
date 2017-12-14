@@ -1,2 +1,4 @@
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y curl
+RUN apt-get update && apt-get upgrade -y \
+  && apt-get install -y curl \
+	&& apt-get clean \
+	&& rm -fr /var/lib/apt/lists/*
