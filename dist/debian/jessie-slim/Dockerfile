@@ -2,7 +2,8 @@
 FROM debian:jessie-slim
 LABEL com.mobingi.code_dir="/var/www/html"
 
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y curl
 
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.2.1/s6-overlay-amd64.tar.gz /tmp/
