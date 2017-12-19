@@ -1,3 +1,7 @@
 #!/usr/bin/with-contenv bash
 
+if [ -f /tmp/init/init.sh ] ; then
+  bash -e /tmp/init/init.sh >> /var/log/startup.log 2>&1
+fi
+
 echo "complete" > /var/log/container_status

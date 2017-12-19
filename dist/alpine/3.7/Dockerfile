@@ -2,7 +2,7 @@
 FROM alpine:3.7
 LABEL com.mobingi.code_dir="/var/www/html"
 
-RUN apk add bash curl --no-cache
+RUN apk add bash curl wget --no-cache
 
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.2.1/s6-overlay-amd64.tar.gz /tmp/

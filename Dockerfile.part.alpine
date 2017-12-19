@@ -1,1 +1,1 @@
-RUN apk add bash curl --no-cache
+RUN apk add bash curl wget --no-cache
