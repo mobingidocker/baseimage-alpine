@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 LABEL com.mobingi.code_dir="/var/www/html"
 
 RUN apt-get update && apt-get upgrade -y \
-  && apt-get install -y curl \
+  && apt-get install -y curl wget \
 	&& apt-get clean \
 	&& rm -fr /var/lib/apt/lists/*
 
