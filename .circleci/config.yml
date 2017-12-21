@@ -3,7 +3,16 @@ version: 2
 jobs:
   build:
     machine: true
+    working_directory: /home/circleci/dockerimage-boilerplate
     steps:
+      - run:
+          name: Enable experimental features of DockerDeamon
+          command: |
+            set -x
+            echo 'DOCKER_OPTS="--experimental=true"' | sudo tee -a /etc/default/docker
+            export DEBIAN_FRONTEND=noninteractive
+            sudo apt-get update && sudo apt-get install -y docker-ce jq
+            sudo service docker restart
       - checkout
       - run:
           name: Install rake
