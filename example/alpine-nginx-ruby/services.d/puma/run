@@ -1,5 +1,0 @@
-#!/usr/bin/execlineb -P
-
-cd /srv/code
-with-contenv
-exec ./bundle_bin/puma
