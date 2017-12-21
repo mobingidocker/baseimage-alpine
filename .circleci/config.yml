@@ -1,0 +1,16 @@
+---
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Install rake
+          command: gem install rake --no-ri --no-rdoc
+      - run:
+          name: Build Images
+          command: rake export_all
+      - run:
+          name: Build Images
+          command: rake build_all
