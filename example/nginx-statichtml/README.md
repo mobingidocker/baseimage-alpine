@@ -1,5 +1,6 @@
 ## nginx-statichtml example
 
+simple website hosting.
 
 ```
 $ docker build -t nginx-statichtml:latest .

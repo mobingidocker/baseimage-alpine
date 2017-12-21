@@ -1,5 +1,7 @@
 ## ubuntu-apache2-php7-with-cron example
 
+run php server under Apache httpd + mod_php and crond.
+
 ```
 $ docker build -t ubuntu-apache2-php7-with-cron:latest .
 ```

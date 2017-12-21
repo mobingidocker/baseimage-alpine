@@ -1,5 +1,7 @@
 ## ubuntu-apache2-php7-with-cron example
 
+run sinatra app and local redis-server.
+
 ```
 $ docker build -t alpine-nginx-ruby:latest .
 ```
