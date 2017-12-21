@@ -1,9 +1,10 @@
-## Docker image for mobingi-alm overview
+# Docker image for mobingi-alm overview
 
 [Mobingi ALM](https://mobingi.co.jp/cloud/saas)では、次の仕様に沿ったdockerイメージを実行します。
 
 - イメージ作成時(docker image build)
   - コードマウントディレクトリの指定
+  - EXPOSE
   - HEALTHCHECK(experimental)
 - 実行時(docker container run)
   - コンテナステータスファイルへの書き込み
@@ -17,6 +18,10 @@ Dockerコンテナを管理する[alm-agent](https://github.com/mobingi/alm-agen
 1. ALM Templateの [`container_code_dir`セクション](https://learn.mobingi.com/alm-templates-reference#container_code_dir)
 1. Dockerイメージの`LABEL:com.mobingi.code_dir`
 1. デフォルトの`/var/www/html`
+
+## EXPOSE
+
+コンテナがポートをLISTENする場合、EXPOSEでポートを指定します。
 
 ## HEALTHCHECK(experimental)
 
