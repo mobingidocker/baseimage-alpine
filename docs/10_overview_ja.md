@@ -21,15 +21,15 @@ Dockerコンテナを管理する[alm-agent](https://github.com/mobingi/alm-agen
 ## HEALTHCHECK(experimental)
 
 Dockerイメージ作成時にHEALTHCHECKを含めることができます。<br />
-現在は動作に影響しませんが、コンテナ起動後のステータスを監視し、状態によってコンテナを自動リスタートする予定です。
+現在は動作に影響しませんが、コンテナ起動後のステータスを監視し、状態によってコンテナを自動リスタートする予定です。
 
 ## コンテナステータスファイルへの書き込み
 
-コンテナ起動後、事前処理などの進行状況を `/var/log/container_status` へ書き込みます。<br />
+コンテナ起動後、事前処理などの進行状況を `/var/log/container_status` へ書き込みます。<br />
 これらはALMのコントロールパネルの表示内容として、[alm-agent](https://github.com/mobingi/alm-agent)がAPIに送信します。
 
 - `installing` : コンテナ起動直後
-- `complete`(必須) : すべての処理が完了し、サービスを提供する準備が整った
+- `complete`(必須) : すべての処理が完了し、サービスを提供する準備が整った
 
 
 ## `mobingi-init.sh`の実行
