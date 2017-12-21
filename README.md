@@ -6,6 +6,7 @@ Dockerhub: [mobingi/baseimage](https://hub.docker.com/r/mobingi/baseimage/)
 
 - ja
   - [Docker image for mobingi-alm overview(ja)](./docs/10_overview_ja.md)
+  - [Build Docker image from boilerplate(ja)](./docs/20_from_boilerplate_ja.md)
 - en
   - wip...
 

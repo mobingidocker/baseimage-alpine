@@ -10,8 +10,11 @@
   - コンテナステータスファイルへの書き込み
   - `mobingi-init.sh`の実行
 
+カスタムイメージは[baseimageを使ったALM用イメージ作成](./20_from_boilerplate_ja.md)を参照するか、この仕様に合致するように作成します。<br />
 
-## コードマウントディレクトリの指定
+## イメージ作成時仕様について
+
+### コードマウントディレクトリの指定
 
 Dockerコンテナを管理する[alm-agent](https://github.com/mobingi/alm-agent)は、コードをマウントするパスを次の優先順で決定します。
 
@@ -19,16 +22,18 @@ Dockerコンテナを管理する[alm-agent](https://github.com/mobingi/alm-agen
 1. Dockerイメージの`LABEL:com.mobingi.code_dir`
 1. デフォルトの`/var/www/html`
 
-## EXPOSE
+### EXPOSE
 
 コンテナがポートをLISTENする場合、EXPOSEでポートを指定します。
 
-## HEALTHCHECK(experimental)
+### HEALTHCHECK(experimental)
 
 Dockerイメージ作成時にHEALTHCHECKを含めることができます。<br />
 現在は動作に影響しませんが、コンテナ起動後のステータスを監視し、状態によってコンテナを自動リスタートする予定です。
 
-## コンテナステータスファイルへの書き込み
+## 実行時仕様について
+
+### コンテナステータスファイルへの書き込み
 
 コンテナ起動後、事前処理などの進行状況を `/var/log/container_status` へ書き込みます。<br />
 これらはALMのコントロールパネルの表示内容として、[alm-agent](https://github.com/mobingi/alm-agent)がAPIに送信します。
@@ -37,7 +42,7 @@ Dockerイメージ作成時にHEALTHCHECKを含めることができます。<br
 - `complete`(必須) : すべての処理が完了し、サービスを提供する準備が整った
 
 
-## `mobingi-init.sh`の実行
+### `mobingi-init.sh`の実行
 
 コードリポジトリに`mobingi-init.sh`というファイルが含まれていると、[alm-agent](https://github.com/mobingi/alm-agent)はコンテナ実行時に`/tmp/init/init.sh`としてマウントします。
 
