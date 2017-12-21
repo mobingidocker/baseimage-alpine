@@ -15,10 +15,10 @@ Dockerfileに`FROM mobingi/baseimage:alpine-3.7`など任意のディストリ�
 - services.d (起動するサービスの定義 | Docs => [Writing a service script - s6-overlay](https://github.com/just-containers/s6-overlay#writing-a-service-script))
 - cont-finish.d コンテナ停止時の処理 | Docs => [Executing initialization And/Or finalization tasks - s6-overlay](https://github.com/just-containers/s6-overlay#executing-initialization-andor-finalization-tasks))
 
-一般的なイメージならば次の2箇所に手を加えるだけでALM用カスタムイメージとして稼働します。
+一般的なイメージならば次の2箇所に手を加えるだけでALM用カスタムイメージとして稼働します。
 
-- `cont-init.d`に初期化処理。
-  - 環境変数を利用するためには shbangを `#!/usr/bin/with-contenv bash`とする
+- `cont-init.d`に初期化処理。
+  - 環境変数を利用するためには shbangを `#!/usr/bin/with-contenv bash`とする
 - `services.d`にサービス名ディレクトリ+`run`ファイル。
   - フォアグラウンドで稼働するように記述
   - 任意でヘルパーの[execline](https://skarnet.org/software/execline/index.html) Syntaxが利用可能
