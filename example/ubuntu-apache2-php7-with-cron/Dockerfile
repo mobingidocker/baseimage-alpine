@@ -1,5 +1,7 @@
 FROM mobingi/baseimage:ubuntu-16.04
+LABEL com.mobingi.code_dir="/var/www/html/public"
 
+RUN sed -e "s@http://archive.ubuntu.com/@http://linux.yz.yamagata-u.ac.jp/pub/linux/ubuntu-archive/@g" /etc/apt/sources.list -i
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		apache2 \
 		software-properties-common \
@@ -31,6 +33,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	&& apt-get clean \
 	&& rm -fr /var/lib/apt/lists/*
 
+ADD scripts /scripts
+RUN /scripts/install-composer.sh
 RUN a2enmod rewrite
 COPY files/000-default.conf /etc/apache2/sites-available/000-default.conf
 
