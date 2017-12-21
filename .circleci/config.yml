@@ -18,8 +18,15 @@ jobs:
           name: Install rake
           command: gem install rake --no-ri --no-rdoc
       - run:
-          name: Build Images
+          name: Export Dockerfiles
           command: rake export_all
       - run:
           name: Build Images
           command: rake build_all
+      - deploy:
+          name: Push Images to Dockerhub
+          command: |
+            if [ "$CIRCLE_BRANCH" == "master" ]; then
+              docker login -u $DOCKER_USER -p $DOCKER_PASS
+              rake push:fromlocal
+            fi
