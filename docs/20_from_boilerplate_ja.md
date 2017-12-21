@@ -27,6 +27,7 @@ Dockerfileに`FROM mobingi/baseimage:alpine-3.7`など任意のディストリ�
 
 - [example/nginx-statichtml](../example/nginx-statichtml/)
 - [example/ubuntu-apache2-php7-with-cron](../example/ubuntu-apache2-php7-with-cron/)
+- [example/alpine-nginx-ruby](../example/alpine-nginx-ruby/)
 
 Boilerplateを使わずにカスタムイメージを自作する場合は、s6を使用する必要はありません。
 
