@@ -32,4 +32,5 @@ RUN mkdir -p "$GEM_HOME" "$BUNDLE_BIN" \
 	&& chmod 777 "$GEM_HOME" "$BUNDLE_BIN"
 
 ENV RACK_ENV production
+EXPOSE 9292
 WORKDIR /srv/code

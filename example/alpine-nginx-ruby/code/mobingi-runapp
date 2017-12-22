@@ -1,0 +1,2 @@
+#!/bin/bash
+exec puma -w 4 -p 9393

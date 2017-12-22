@@ -1,12 +1,14 @@
 #!/usr/bin/execlineb -P
 
-define custom_runner "/srv/code/mobingi-runapp.sh"
-cd /srv/code
+define custom_runner "/srv/code/mobingi-runapp"
 with-contenv
+cd /srv/code
 
 ifthenelse
 { test -f $custom_runner }
-{ exec $custom_runner }
-{ exec ./bundle_bin/rackup -o 0.0.0.0 }
-
-
+{
+  exec $custom_runner
+}
+{
+  exec rackup -o 0.0.0.0
+}
