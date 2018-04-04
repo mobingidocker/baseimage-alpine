@@ -22,4 +22,4 @@ ONBUILD ADD ./cont-finish.d /etc/cont-finish.d
 HEALTHCHECK --start-period=3m --interval=1m --timeout=5s \
   CMD curl -f http://127.0.0.1/ || exit 1
 
-ENTRYPOINT ["/init"]
+CMD ["/init"]
