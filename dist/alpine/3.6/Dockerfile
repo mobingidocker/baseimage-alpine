@@ -2,7 +2,7 @@
 FROM alpine:3.6
 LABEL com.mobingi.code_dir="/var/www/html"
 
-RUN apk add bash curl wget git --no-cache
+RUN apk add tar bash curl wget git --no-cache
 
 RUN curl -sfL https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-alpine-linux-amd64-v0.6.1.tar.gz | tar xvzf -C / -
 
