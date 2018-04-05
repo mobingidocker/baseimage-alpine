@@ -4,7 +4,9 @@ LABEL com.mobingi.code_dir="/var/www/html"
 
 RUN apk add tar bash curl wget git --no-cache
 
-RUN curl -sfL https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-alpine-linux-amd64-v0.6.1.tar.gz | tar xvzf -C / -
+RUN curl -sfL \
+  https://github.com/jwilder/dockerize/releases/download/v0.6.1/dockerize-alpine-linux-amd64-v0.6.1.tar.gz \
+  | tar xvzf - -C /
 
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v1.21.2.1/s6-overlay-amd64.tar.gz /tmp/
