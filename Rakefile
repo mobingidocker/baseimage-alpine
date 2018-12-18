@@ -2,7 +2,7 @@ require 'erb'
 require 'yaml'
 require 'open3'
 
-s6_version='v1.21.2.1'
+s6_version='v1.21.7.0'
 template = File.read(File.expand_path('../Dockerfile.template', __FILE__) )
 targets = YAML.load(File.read(File.expand_path('../buildtargets.yml', __FILE__) ))
 
